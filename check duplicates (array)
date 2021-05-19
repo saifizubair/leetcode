@@ -1,0 +1,27 @@
+package com.company;
+
+import javax.sql.rowset.spi.SyncResolver;
+import java.lang.*;
+import java.util.*;
+import java.io.*;
+
+
+public class Main {
+    public static boolean checkduplicate(int arr[]){
+        Arrays.sort(arr);
+        for (int i=0;i<arr.length-1;i++){
+            if (arr[i]==arr[i+1]){
+                return true;
+            }
+        }
+        return false;
+    }
+    public static void main(String[]args){
+     int arr[]={1,2,3,4,5,6};
+     checkduplicate(arr);
+     if (checkduplicate(arr)==true){
+         System.out.println(true);
+     }else
+         System.out.println(false);
+    }
+}
