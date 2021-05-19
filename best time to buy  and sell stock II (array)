@@ -1,0 +1,27 @@
+package com.company;
+
+import javax.sql.rowset.spi.SyncResolver;
+import java.lang.*;
+import java.util.*;
+import java.io.*;
+
+
+public class Main {
+
+    public static void main(String[]args) {
+                                                                         //best time to buy and sell stock (infinite time transaction )
+        int arr[]={1,2,3,4,2,6};
+        int bd =0;
+        int sd =0;
+        int profit =0;
+        for (int i=1;i< arr.length;i++){
+            if (arr[i]>arr[i-1]){
+                sd++;
+            }
+            profit=profit+(arr[sd]-arr[bd]);
+            sd=bd=i;
+        }
+        profit=profit+(arr[sd]-arr[bd]);
+        System.out.println(profit);
+    }
+}
