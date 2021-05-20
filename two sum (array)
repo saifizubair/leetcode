@@ -1,0 +1,35 @@
+package com.company;
+
+import javax.sql.rowset.spi.SyncResolver;
+import java.lang.*;
+import java.util.*;
+import java.io.*;
+
+
+public class Main {
+    public static int[]twosum(int arr[],int target,int n){
+        int result []=new int[2];
+        Map<Integer,Integer>map=new HashMap<>();
+        for (int i=0;i<arr.length;i++){
+            if (map.containsKey(target-arr[i])){
+                result[0]=map.get(target-arr[i]);
+                result[1]=i;
+
+                return result;
+            }
+            map.put(arr[i],i);
+        }
+        return result;
+    }
+    public static void main(String[]args){
+        int arr[]={1,2,3,5};
+        int target =8;
+        int n=arr.length;
+        int sum[]=twosum(arr,target,n);
+        if (sum.length==2){
+            System.out.println(sum[0]+" "+ sum[1]);
+        }
+        else
+            System.out.println("no result found");
+    }
+}
