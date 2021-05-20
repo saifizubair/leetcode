@@ -1,0 +1,26 @@
+package com.company;
+
+import javax.sql.rowset.spi.SyncResolver;
+import java.lang.*;
+import java.util.*;
+import java.io.*;
+
+
+public class Main {
+   public static void main(String[]args) {
+
+       int num1[]={1,2,3,4};
+       int num2[]={1,2};
+       Set<Integer>s =new HashSet<>();
+       Set<Integer>result =new HashSet<>();
+       for (int num :num1){
+           s.add(num);
+       }
+       for (int num :num2){
+           if (s.contains(num)){
+               result.add(num);
+           }
+       }
+       System.out.print(result+ " ");
+   }
+}
