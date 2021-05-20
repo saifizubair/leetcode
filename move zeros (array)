@@ -1,0 +1,36 @@
+package com.company;
+
+import javax.sql.rowset.spi.SyncResolver;
+import java.lang.*;
+import java.util.*;
+import java.io.*;
+
+
+public class Main {
+    public static void movezeros(int arr[],int n){
+        if(n==0||n==1){
+            return;
+        }
+        int left =0;
+        int right =0;
+        while (right<n){
+            if (arr[right]==0){
+                right++;
+            }
+            else {
+                int temp =arr[left];
+                arr[left]=arr[right];
+                arr[right]=temp;
+                right++;
+                left++;
+            }
+        }
+    }
+   public static void main(String[]args) {
+
+      int arr[]={1,2,3,0,7,0,9};
+      int n =arr.length;
+      movezeros(arr,n);
+      System.out.println(Arrays.toString(arr));
+   }
+}
