@@ -1,0 +1,30 @@
+package com.company;
+
+import java.lang.*;
+import java.util.*;
+import java.io.*;
+
+public class Main {
+    public static void maxarea(int height[]){
+        int left=0;
+        int right =height.length-1;
+        int max =0;
+        while (left<right){
+            int lh =height[left];
+            int rh =height[right];
+            int min_h =Math.min(lh,rh);
+            int len =right-left;
+            int current_area =min_h*len;
+            max =Math.max(current_area,max);
+            if (lh<rh)left++;
+            else right--;
+        }
+        System.out.print(max);
+    }
+    public static void main(String[]args) {
+
+        int height []={1,8,6,2,5,4,8,3,7};
+        maxarea(height);
+    }
+
+}
