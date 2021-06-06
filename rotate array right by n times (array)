@@ -1,42 +1,42 @@
 package com.company;
 
-import javax.sql.rowset.spi.SyncResolver;
+
+
+import java.io.*;
 import java.lang.*;
 import java.util.*;
-import java.io.*;
 
 
 public class Main {
-    public static void reverse(int arr[],int start ,int end) {
-        while (start < end) {
-                int temp = arr[start];
-                arr[start] = arr[end];
-                arr[end] = temp;
-                start++;
-                end--;
-
+    public static void reverse(int arr[],int start ,int end){
+        while (start<end){
+            int temp =arr[start];
+            arr[start]=arr[end];
+            arr[end]=temp;
+            start++;
+            end--;
+        }
+    }
+    public static void printarray(int arr[]){
+        for (int i=0;i<arr.length;i++){
+            System.out.print(arr[i]+" ");
         }
     }
     public static void rotate(int arr[],int k,int n){
-        k=k% arr.length;
+        k=k%arr.length;
         reverse(arr,0,arr.length-k-1);
         reverse(arr,arr.length-k,arr.length-1);
         reverse(arr,0,arr.length-1);
     }
-    static void printarray(int arr[])
-    {
-        StringBuilder sb = new StringBuilder();
-        for (int ar:arr){
-            sb.append(ar+" ");
-        }
-        System.out.println(sb);
-    }
-    public static void main(String[] args) {
-        // rotate an array by k times
-        int arr[]={1,2,3,4,5,6,7,8,9,10};
-        int k=3;
-        int n = arr.length;
-        rotate (arr,k,n);
-        printarray(arr);
-    }
+   public static void main(String[]args)  {
+       int arr[]={1,2,3,4,5,6,7,8,9,10};
+       System.out.print("enter the Kth position ");
+       Scanner sc =new Scanner(System.in);
+       int k= sc.nextInt();
+       int n = arr.length;
+       rotate (arr,k,n);
+       printarray(arr);
+   }
 }
+
+
