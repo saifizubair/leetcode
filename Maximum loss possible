@@ -1,0 +1,29 @@
+package com.company;
+
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int arr[]={1,8,4,2,3,2};
+        int hsf  =Integer.MIN_VALUE;
+        int ol =0;
+        int list =0;
+        for (int i=0;i<arr.length;i++){
+            if (arr[i]>hsf){
+                hsf=arr[i];
+            }
+            list =Math.abs(arr[i]-hsf);
+            if (list>ol){
+                ol=list;
+            }
+        }
+        System.out.print(ol+" ");
+
+    }
+
+    }
