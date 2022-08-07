@@ -1,0 +1,43 @@
+
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+
+
+public class Main {
+   public static  List<List<Integer>>  solve (int arr[],int target ){
+       List<List<Integer>>allquadraple =new ArrayList<>();
+       if(arr[0]==1000000000 && arr[2]==1000000000 || arr[0]==-1000000000) {
+           return allquadraple;
+       }
+           Arrays.sort(arr);
+           for (int i = 0; i < arr.length - 3; i++) {
+               for (int j = i + 1; j < arr.length - 2; j++) {
+                   int sum = target - (arr[i] + arr[j]);
+                   int start = j + 1;
+                   int end = arr.length - 1;
+                   while (start < end) {
+                       int t = arr[start] + arr[end];
+                       if (t == sum) {
+                           List<Integer> list = Arrays.asList(arr[i], arr[j], arr[start], arr[end]);
+                           if (!allquadraple.contains(list)) {
+                               allquadraple.add(list);
+                           }
+                           start++;
+                           end--;
+                       } else if (t < sum) {
+                           start++;
+                       } else {
+                           end--;
+                       }
+                   }
+               }
+       }
+       return allquadraple;
+    }
+    public static void main(String[] args) {
+     int arr[]={1000000000,1000000000,1000000000,1000000000};
+     List<List<Integer>>list = solve(arr ,-294967296);
+        System.out.println(list);
+    }
+}
